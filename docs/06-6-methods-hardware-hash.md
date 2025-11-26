@@ -1,1 +1,6 @@
-
+- OOBE extraction (new devices)
+- Installed Windows (existing devices)
+- OEM/Manufacturer registration
+- USB provisioning packages
+- Automated bulk scripts
+- From Intune portal
