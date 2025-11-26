@@ -1,0 +1,3 @@
+- Step-by-step implementation
+- Screenshots and examples
+- Best practices
