@@ -1,0 +1,4 @@
+- Endpoint protection
+- BitLocker encryption
+- Firewall rules
+- Attack surface reduction
