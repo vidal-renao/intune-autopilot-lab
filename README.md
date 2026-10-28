@@ -26,21 +26,21 @@
 
 ## 🎯 Overview
 
-This lab demonstrates a complete **modern device management solution** using Microsoft's cloud-first approach. Traditional device deployment requires 2+ hours per device with manual configuration. This solution reduces that to **5 minutes** with **zero manual work** per device.
+This hands-on lab documents a **modern device management workflow** using Entra ID, Intune and Windows Autopilot. It demonstrates configuration and enrollment in a test environment. No fleet-scale time, cost or reliability benchmark is claimed.
 
 ### **The Problem**
 - ❌ Manual configuration on every device
-- ❌ 200+ hours for 100 devices
+- ❌ Repeated setup effort as device counts grow
 - ❌ Configuration inconsistencies
 - ❌ Human errors
 - ❌ No scalability
 
 ### **The Solution**
-- ✅ Configure once, deploy infinitely
-- ✅ 5 hours total for 100 devices (98% time reduction)
-- ✅ 100% configuration consistency
+- ✅ Reuse centrally managed configuration
+- ✅ Reduce repeated manual configuration steps
+- ✅ Apply a common configuration baseline
 - ✅ Zero-touch deployment
-- ✅ Infinite scalability
+- ✅ Manage device assignments centrally
 
 ---
 
@@ -92,7 +92,7 @@ This lab demonstrates a complete **modern device management solution** using Mic
         │                                 │                         │
         │                                 ▼                         ▼
         │                          ┌────────────┐          ┌────────────┐
-        │                          │  5 minutes │          │   Device   │
+        │                          │ Hash import│          │   Device   │
         └─────────────────────────▶│  per hash  │          │   Ready!   │
                                    └────────────┘          └────────────┘
 ```
@@ -259,7 +259,7 @@ Get-WindowsAutopilotInfo -OutputFile C:\AutopilotHWID.csv
 ```
 
 #### **Complete Method Documentation**
-📄 See [6-Methods-Hardware-Hash-Extraction.md](./docs/6-methods-hardware-hash.md) for all methods including:
+📄 See [6-Methods-Hardware-Hash-Extraction.md](./docs/06-6-methods-hardware-hash.md) for all methods including:
 - OOBE extraction
 - Installed Windows
 - OEM/Manufacturer registration
@@ -310,37 +310,15 @@ Get-WmiObject -Namespace root\cimv2\mdm\dmmap -Class MDM_DevDetail_Ext01
 
 ## 📊 Results & Impact
 
-### **Time Comparison: 100 Devices**
+The lab demonstrates the enrollment workflow and policy configuration. Benefits to assess in a real rollout include less repeated setup, centrally managed settings and clearer device visibility.
 
-| Method | Setup Time | Per Device | Total Time | Cost Factor |
-|--------|-----------|------------|------------|-------------|
-| **Traditional** | 0h | 2h | 200h | 100% |
-| **Intune + Autopilot** | 4h | 0.05h | 9h | 4.5% |
-| **Savings** | - | -1.95h | **191h** | **95.5%** |
+No measured deployment-time, cost-saving or fleet-wide consistency result is provided. Actual provisioning depends on connectivity, application size, device state and policy processing.
 
-### **Key Metrics**
+### Verification
 
-```
-⏱️  Time Saved: 98%
-💰 Cost Reduction: 95%+
-🎯 Configuration Accuracy: 100%
-📈 Scalability: Unlimited
-🔒 Security Compliance: Automated
-👤 User Experience: Seamless
-```
-
-### **Business Impact**
-
-#### **For a company with 500 employees:**
-- **Traditional approach**: 1,000 hours = 125 work days = ~6 months for 1 person
-- **Modern approach**: 22.5 hours = 3 work days
-- **Saved**: 977.5 hours = **$48,875** (at $50/hour)
-
-#### **Ongoing Operations:**
-- **New employee onboarding**: 5 minutes vs 2 hours
-- **Device replacement**: Instant vs half-day process
-- **Configuration changes**: Push to all devices vs manual updates
-- **Security patches**: Automated vs manual deployment
+- Confirm the device join state.
+- Review enrollment, application and compliance results in Intune.
+- Record failures and elapsed time before estimating a larger rollout.
 
 ---
 
@@ -377,7 +355,7 @@ Get-WmiObject -Namespace root\cimv2\mdm\dmmap -Class MDM_DevDetail_Ext01
 - Screenshots and examples
 - Best practices
 
-📄 **[6 Methods to Extract Hardware Hash](./docs/6-methods-hardware-hash.md)**
+📄 **[6 Methods to Extract Hardware Hash](./docs/06-6-methods-hardware-hash.md)**
 - OOBE extraction (new devices)
 - Installed Windows (existing devices)
 - OEM/Manufacturer registration
@@ -481,9 +459,9 @@ This lab demonstrates skills directly applicable to:
 
 ## 🔗 Related Projects
 
-- [Azure Infrastructure Lab](https://github.com/vidal-renao/azure-infrastructure)
-- [Windows Server Configuration](https://github.com/vidal-renao/windows-server-lab)
-- [PowerShell Automation Scripts](https://github.com/vidal-renao/powershell-scripts)
+- [M365 Graph Dashboard](https://github.com/vidal-renao/m365-graph-dashboard)
+- [Graph Employee Onboarding](https://github.com/vidal-renao/graph-employee-onboarding)
+- [M365 Enterprise Lab](https://github.com/vidal-renao/m365-enterprise-lab)
 
 ---
 
@@ -493,13 +471,7 @@ This lab demonstrates skills directly applicable to:
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vidalrenao/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vidal-renao)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:admin@vidalcloudsolutions.onmicrosoft.com)
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+[Portfolio](https://vidal-pro-portfolio.vercel.app/en)
 
 ---
 
@@ -514,7 +486,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🏆 Certifications & Learning Path
 
-This lab aligns with:
+Learning topics overlap with the following certification paths; this list does not claim that I hold these certifications:
 - **Microsoft 365 Certified: Modern Desktop Administrator Associate**
 - **Microsoft Certified: Security, Compliance, and Identity Fundamentals**
 - **Microsoft Certified: Azure Administrator Associate**
@@ -531,4 +503,4 @@ This lab aligns with:
 
 ---
 
-*Last Updated: November 2025*
+*Documentation reviewed: October 2026*
